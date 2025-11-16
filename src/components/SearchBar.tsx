@@ -37,7 +37,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ value, onChange }) => {
     }, [innerValue, onChange]);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setInnerValue(e.target.value); // l’input si aggiorna subito, senza lag
+        setInnerValue(e.target.value);
     };
 
     return (
