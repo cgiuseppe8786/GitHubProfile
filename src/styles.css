@@ -336,9 +336,7 @@ body {
 
 /* Responsive: sotto i 900px stack verticale */
 @media (max-width: 900px) {
-    .profile {
-        margin-top: 532px;
-    }
+
 
     .profile__top {
         flex-direction: column;
