@@ -6,7 +6,7 @@ import type { GithubRepo, GithubUser } from "./types/types";
 import { fetchGithubRepos, fetchGithubUser } from "./services/github";
 
 const App: React.FC = () => {
-  const [usernameInput, setUsernameInput] = useState("");
+  const [usernameInput, setUsernameInput] = useState("github");
   const [user, setUser] = useState<GithubUser | null>(null);
   const [repos, setRepos] = useState<GithubRepo[]>([]);
   const [loading, setLoading] = useState(false);

@@ -1,73 +1,116 @@
-# React + TypeScript + Vite
+# 🧑‍💻 GitHub Profile Search
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Applicazione Front-end realizzata in **React + TypeScript** con **Vite**, che permette di cercare utenti GitHub e visualizzare in modo chiaro e fedele al design i dati principali del profilo insieme alle repository più recenti.
 
-Currently, two official plugins are available:
+L’interfaccia riproduce fedelmente il mockup fornito, con particolare attenzione a:
+- tipografia Be Vietnam Pro
+- palette di colori
+- componenti riutilizzabili
+- layout responsive (mobile / tablet / desktop)
+- animazioni e ombre identiche al design originale
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🎯 Obiettivi del progetto
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Creare una pagina di ricerca utenti GitHub con UI moderna.
+- Implementare una **search bar con debounce** per evitare chiamate eccessive all’API.
+- Visualizzare immagine profilo, bio, posizione, followers e following.
+- Mostrare le repository più aggiornate con card complete di:
+  - titolo
+  - descrizione
+  - licenza
+  - numero stelle
+  - fork
+  - ultima modifica
+- Riprodurre un layout identico alla proposta grafica.
+- Garantire un comportamento responsive su tutte le risoluzioni.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## ⚙️ Funzionalità principali
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### 🔍 Ricerca utenti GitHub
+- Digitando un username, l’app effettua una ricerca automatica con un debounce di 500ms.
+- La ricerca avviene tramite le API pubbliche GitHub REST.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### 👤 Header profilo
+- Avatar con ombra e bordo identico al mockup.
+- Pill “Followers”, “Following”, “Location” con stile dedicato.
+- Nome e biografia perfettamente allineati secondo il design.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 📦 Repository List
+Ogni card mostra:
+- titolo repo
+- descrizione
+- badge licenza
+- icona e count delle stelle ⭐️
+- icona e count dei fork
+- ultima modifica
+- apertura repo in una nuova tab
+
+### ⚡ Performance
+- Debouncing input → nessun lag mentre si scrive
+- Chiamate API ottimizzate e ordinate
+- Rendering fluido e componenti riutilizzabili
+
+---
+
+## 🧱 Tecnologie utilizzate
+
+- **React 18**
+- **TypeScript**
+- **Vite**
+- **CSS puro** con variabili e gradienti
+- **GitHub REST API**
+- **Google Fonts (Be Vietnam Pro)**
+
+---
+
+## 📁 Struttura del progetto
+
+```
+src/
+│ App.tsx
+│ styles.css
+├─ assets/
+│   ├─ hero-image-github-profile.jpg
+│   ├─ hero-image-github-profile-sm.jpg
+│   ├─ Search.svg
+│   ├─ Star.svg
+│   ├─ Nesting.svg
+│   ├─ Chield_alt.svg
+├─ components/
+│   ├─ SearchBar.tsx
+│   ├─ ProfileHeader.tsx
+│   ├─ RepoCard.tsx
+│   ├─ RepoList.tsx
+├─ services/
+│   └─ github.ts
+└─ types/
+    └─ types.ts
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🚀 Demo
+👉 **Live Preview:** [https://cgiuseppe8786.github.io/GitHubProfile/](https://cgiuseppe8786.github.io/GitHubProfile/)
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
+
+## 💻 Codice sorgente
+📂 **Repository:** [https://github.com/cgiuseppe8786/GitHubProfile](https://github.com/cgiuseppe8786/GitHubProfile)
+
+---
+
+## 🧰 Tecnologie utilizzate
+- **React + TypeScript** → per componenti modulari e tipizzati  
+- **Vite** → per sviluppo rapido e build ottimizzata  
+- **CSS3 + variabili CSS** → per colori, media query e personalizzazione del tema  
+- **GitHub Actions** → per CI/CD e deploy automatico  
+- **GitHub Pages** → hosting statico del progetto  
+
+---
+
+## 🧾 Licenza
+Rilasciato sotto licenza **MIT**.  
