@@ -115,17 +115,18 @@ body {
     align-items: center;
     gap: 12px;
     width: 100%;
-    max-width: 760px;
+    height: 60px;
+    max-width: 520px;
     margin: 0 auto;
     padding: 10px 14px 10px 20px;
-    border-radius: 999px;
+    border-radius: 10px;
     background-color: #20293a;
     box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
 }
 
 .search__icon img {
-    width: 18px;
-    height: 18px;
+    width: 25px;
+    height: 25px;
     display: block;
 }
 
@@ -364,10 +365,14 @@ body {
     background: transparent;
 }
 
+.repos {
+    margin-top: 24px;
+}
+
 .repos__grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 20px;
+    gap: 24px;
 }
 
 /* CARD CONTAINER */
@@ -376,11 +381,14 @@ body {
     flex-direction: column;
     justify-content: space-between;
     gap: 10px;
-    padding: 18px 22px;
+
+    padding: 18px 24px;
     border-radius: 20px;
+
     background: linear-gradient(95deg, #111729 3%, #1d1b48 99.61%);
     text-decoration: none;
     color: inherit;
+
     box-shadow: 0 18px 45px rgba(0, 0, 0, 0.55);
     transition: transform 150ms ease-out, box-shadow 150ms ease-out;
 }
@@ -390,79 +398,70 @@ body {
     box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7);
 }
 
-/* TITOLO */
+/* TITOLO REPO (.github, accessibilityjs, ...) */
 .repo-card__title {
     margin: 0;
     font-size: var(--fs-title);
+    /* 20px */
     font-weight: 600;
     color: #ffffff;
 }
 
 /* DESCRIZIONE */
 .repo-card__description {
-    margin: 0;
+    margin: 4px 0 0;
     font-size: var(--fs-body);
+    /* 16px */
     line-height: 1.4;
-    color: #97a3b6;
+    color: #cdd5e0;
 }
 
-/* FOOTER: META + UPDATED */
+/* FOOTER: MIT + icone + updated */
 .repo-card__footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 8px;
-    font-size: 0.8rem;
+    margin-top: 14px;
+    font-size: var(--fs-small);
+    /* 12px */
 }
 
-/* RIGA META A SINISTRA (MIT, icone, numeri) */
+/* parte sinistra (MIT, fork, star) */
 .repo-card__meta {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 10px;
-    font-size: var(--fs-body);
+    gap: 12px;
 }
 
-/* PILL DELLA LICENZA (MIT) */
-.repo-card__chip {
-    padding: 4px 10px;
-    border-radius: 999px;
-    border: 1px solid rgba(205, 213, 224, 0.35);
-    font-size: var(--fs-small);
-    color: #cdd5e0;
-}
-
-/* ICONE FORK / STAR + NUMERI */
+/* MIT, fork, star */
 .repo-card__meta-item {
     display: inline-flex;
     align-items: center;
-    gap: 4px;
+    gap: 6px;
     color: #cdd5e0;
     opacity: 0.9;
-    font-size: var(--fs-small);
 }
 
 .repo-card__meta-item img {
     width: 14px;
     height: 14px;
     display: block;
-    opacity: 0.85;
+    opacity: 0.8;
 }
 
-/* TESTO "updated X days ago" A DESTRA */
+/* “updated X days ago” a destra */
 .repo-card__updated {
     color: #97a3b6;
     white-space: nowrap;
-    font-size: 0.8rem;
+    font-size: var(--fs-small);
 }
-
 
 /* link "View all repositories" */
 .repos__all {
     text-align: center;
-    margin-top: 24px;
-    font-size: 0.95rem;
+    margin-top: 32px;
+    font-size: var(--fs-body);
 }
 
 .repos__all a {

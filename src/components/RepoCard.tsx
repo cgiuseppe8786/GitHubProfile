@@ -2,6 +2,7 @@ import React from "react";
 import type { GithubRepo } from "../types/types";
 import StarIcon from "../assets/Star.svg";
 import NestingIcon from "../assets/Nesting.svg";
+import ShieldIcon from "../assets/Chield_alt.svg"; // icona licenza (MIT)
 
 interface RepoCardProps {
     repo: GithubRepo;
@@ -18,23 +19,30 @@ function formatUpdatedAt(dateString: string): string {
 }
 
 const RepoCard: React.FC<RepoCardProps> = ({ repo }) => {
-    const licenseName = repo.license?.name ?? "No license";
+    const licenseName = repo.license?.name ?? "MIT";
+
     return (
         <a
             href={repo.html_url}
             className="repo-card"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
         >
+            {/* titolo */}
             <h3 className="repo-card__title">{repo.name}</h3>
 
+            {/* descrizione */}
             {repo.description && (
                 <p className="repo-card__description">{repo.description}</p>
             )}
 
+            {/* footer: MIT + icone + updated */}
             <div className="repo-card__footer">
                 <div className="repo-card__meta">
-                    <span className="repo-card__chip">{licenseName}</span>
+                    <span className="repo-card__meta-item">
+                        <img src={ShieldIcon} alt="" />
+                        {licenseName}
+                    </span>
 
                     <span className="repo-card__meta-item">
                         <img src={NestingIcon} alt="" />
@@ -52,7 +60,6 @@ const RepoCard: React.FC<RepoCardProps> = ({ repo }) => {
                 </span>
             </div>
         </a>
-
     );
 };
 

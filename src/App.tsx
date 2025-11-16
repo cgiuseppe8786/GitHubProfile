@@ -15,7 +15,7 @@ const App: React.FC = () => {
 
   const handleSearch = async () => {
     const value = usernameInput.trim();
-    if (!value) return;
+
 
     setLoading(true);
     setError(null);

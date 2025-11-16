@@ -33,9 +33,6 @@ const SearchBar: React.FC<SearchBarProps> = ({
                 onChange={(e) => onChange(e.target.value)}
                 aria-label="GitHub username"
             />
-            <button className="search__button" type="submit" disabled={loading}>
-                {loading ? "Searching..." : "Search"}
-            </button>
         </form>
     );
 };
