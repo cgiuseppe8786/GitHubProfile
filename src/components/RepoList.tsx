@@ -16,7 +16,7 @@ const RepoList: React.FC<RepoListProps> = ({ repos, username }) => {
         );
     }
 
-    const topRepos = repos.slice(0, 4); // prima riga di card come nel design
+    const topRepos = repos.slice(0, 4);
 
     return (
         <section className="repos">

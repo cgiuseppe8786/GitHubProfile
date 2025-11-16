@@ -13,13 +13,16 @@ const App: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
   const [hasSearched, setHasSearched] = useState(false);
 
-  const handleSearch = async () => {
-    const value = usernameInput.trim();
+  const handleSearch = async (inputSearch: string) => {
+    setUsernameInput(inputSearch);
+    const value = inputSearch;
 
 
     setLoading(true);
     setError(null);
     setHasSearched(true);
+
+
 
     try {
       const [userData, reposData] = await Promise.all([
@@ -42,11 +45,7 @@ const App: React.FC = () => {
     }
   };
 
-  // carica un profilo iniziale
-  React.useEffect(() => {
-    handleSearch();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+
 
   return (
     <div className="app">
@@ -55,9 +54,7 @@ const App: React.FC = () => {
         <div className="container hero__content">
           <SearchBar
             value={usernameInput}
-            onChange={setUsernameInput}
-            onSubmit={handleSearch}
-            loading={loading}
+            onChange={handleSearch}
           />
 
           {user && (
